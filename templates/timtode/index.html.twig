@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TIMTODE{% endblock %}
+
+
+{% block body %}
+
+{% include 'navbar.html.twig' %}
+
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 style="text-align: center;">TIMTODE</h1>
+
+    <div class="row" style="text-align: center;">
+        <div class="col-sm-12 col-md-6">
+            <btn id="btnAnnonce" onClick="onClickAnnonce()">Annonces</btn>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <btn id="btnPatch" onClick="onClickPatch()">Patch</btn>
+        </div>
+    </div>
+
+
+    <div id="annonceDiv">
+        {% include 'annonces.html.twig' %}
+    </div>
+
+    <div id="patchDiv">
+        {% include 'patchs.html.twig' %}
+    </div>
+
+
+    <script>
+        
+        var annonceDiv = document.getElementById("annonceDiv");
+        var annonce = true;
+        annonceDiv.style.display = "block";
+
+        var patchDiv = document.getElementById("patchDiv");
+        var patch = false;
+        patchDiv.style.display = "none";
+        
+        function onClickAnnonce() {
+            if (patch) {
+                patch = !patch;
+                annonce = !annonce;
+                annonceDiv.style.display = "block";
+                patchDiv.style.display = "none";
+            }
+        }
+
+        function onClickPatch() {
+            if (annonce) {
+                annonce = !annonce;
+                patch = !patch;
+                patchDiv.style.display = "block";
+                annonceDiv.style.display = "none";
+            }
+        }
+
+    </script>
+</div>
+{% endblock %}

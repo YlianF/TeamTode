@@ -17,25 +17,22 @@
 				</li>
 
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Dropdown
+					<a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					Jeux
 					</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#">Action</a></li>
-					<li><a class="dropdown-item" href="#">Another action</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="#">Something else here</a></li>
+					<li><a class="dropdown-item" href="#">TIMTODE</a></li>
+					<li><a class="dropdown-item" href="#">Spirout</a></li>
 				</ul>
 				</li>
 			</ul>
-
 			{% if is_granted('ROLE_ADMIN') %}
-			<li class="nav-item">
+			<li class="nav-item d-flex" style="margin-right: 20px;">
 				<a class="nav-link active" href="{{ path('admin') }}">Zone admin</a>
 			</li>
 			{% endif %}
 
-			<li class="nav-item d-flex">
+			<li class="nav-item d-flex" style="margin-right: 20px;">
 				{% if app.user %}
 				<a class="nav-link active" href="{{ path('app_logout') }}">Se déconnecter</a>
 				{% else %}
