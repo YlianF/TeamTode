@@ -13,5 +13,11 @@
 
 <div class="example-wrapper">
     <h1>Annonces</h1>
+    {% for annonce in annonces  %}
+        <div>
+            <h2>{{ annonce.title }}</h2>
+            <textarea style="height: 200px;">{{ annonce.content }}</textarea>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}

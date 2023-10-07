@@ -3,13 +3,13 @@
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use App\Repository\TimtodeAnnonceRepository;
+use App\Repository\AnnoncesRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TimtodeAnnonceRepository::class)]
+#[ORM\Entity(repositoryClass: AnnoncesRepository::class)]
 #[ApiResource]
-class TimtodeAnnonce
+class Annonces
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -22,11 +22,14 @@ class TimtodeAnnonce
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     private ?string $content = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $link = null;
+
+    #[ORM\ManyToOne(inversedBy: 'annonces')]
+    private ?Jeux $jeu = null;
 
     public function getId(): ?int
     {
@@ -77,6 +80,18 @@ class TimtodeAnnonce
     public function setLink(?string $link): static
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getJeu(): ?Jeux
+    {
+        return $this->jeu;
+    }
+
+    public function setJeu(?Jeux $jeu): static
+    {
+        $this->jeu = $jeu;
 
         return $this;
     }
