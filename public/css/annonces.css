@@ -1,0 +1,45 @@
+
+#title {
+    font: 25px;
+}
+
+#date {
+    font: 12px;
+    font-family: monospace;
+    margin-top: 5px;
+}
+
+#link {
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+    font: 12px;
+}
+
+#content {
+    color: white;
+    background-color: rgb(32, 30, 50);
+    min-width: 100%;
+    padding: 10px;
+    border: 0px;
+    height: 1em auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow:hidden;
+    resize:none
+
+}
+
+#annonce {
+    
+    border-radius: 10px;
+    
+    background-color: rgb(32, 30, 50);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    margin: auto;
+    margin-top: 30px;
+    width: 85%;
+    padding: 20px;
+    padding-bottom: 32px;
+}

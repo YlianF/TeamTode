@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Annonce{% endblock %}
+
+{% block stylesheets %}  
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/annonces.css') }}" /> 
+{% endblock %}
+
+{% block body %}
+
+<div id="annonce">
+
+    <h2 id="title">{{ annonce.title }}</h2>
+
+    <p id="date">{{ annonce.date |date('d-m-Y') }} </p>
+
+    <textarea readonly="true" rows="4" id="content">{{ annonce.content[:400] }}</textarea>
+
+    {% if annonce.link != null %}
+    <a id="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a> <br>
+    {% endif %}
+
+</div>
+
+
+{% endblock %}

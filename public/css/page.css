@@ -1,0 +1,26 @@
+@font-face{
+    font-family: 'asap';
+    font-style: normal;
+    font-weight: 100;
+    src: url('../fonts/static/Asap-Thin.ttf');
+}
+
+
+.title {
+    padding-top: 30px;
+    font-size: 50px;
+}
+
+.back {
+    background-image: url("../img/ciel-etoiles.png");
+    background-size: 100%;
+}
+
+.page {
+    margin: auto;
+    color: white;
+    max-width: 1000px;
+    width: 80%;
+    font-family: asap;
+}
+

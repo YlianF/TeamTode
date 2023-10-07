@@ -1,0 +1,10 @@
+@font-face{
+    font-family: 'asap';
+    font-style: normal;
+    font-weight: 100;
+    src: url('../fonts/static/Asap-Light.ttf');
+}
+
+.navbar {
+    font-family: asap;
+}
