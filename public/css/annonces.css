@@ -1,45 +1,54 @@
 
-#title {
-    font: 25px;
+.title {
+    font-size: 2.5em;
 }
 
-#date {
-    font: 12px;
+.date {
+    font: 1em;
     font-family: monospace;
     margin-top: 5px;
 }
 
-#link {
+.voirPlus {
+    color: white;
     all: unset;
     text-decoration: underline;
     cursor: pointer;
     float: right;
-    font: 12px;
+    font: 1em;
 }
 
-#content {
+.link {
+    all: unset;
+    text-decoration: underline;
+    cursor: pointer;
+    font: 1em;
+    float: left;
+}
+
+.content {
+    font: 1.5em;
     color: white;
     background-color: rgb(32, 30, 50);
     min-width: 100%;
     padding: 10px;
     border: 0px;
-    height: 1em auto;
     margin-top: 5px;
     margin-bottom: 5px;
     overflow:hidden;
     resize:none
-
 }
 
-#annonce {
-    
+.annonce {
     border-radius: 10px;
-    
     background-color: rgb(32, 30, 50);
     box-shadow: 0px 0px 10px rgb(0, 0, 0);
     margin: auto;
     margin-top: 30px;
     width: 85%;
-    padding: 20px;
-    padding-bottom: 32px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
 }
+

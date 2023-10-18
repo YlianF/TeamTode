@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}ANNONCE{% endblock %}
+
+
+
+{% block body %}
+
+
+<div class="back">
+
+    <div class="page">
+
+        <h1 class="title">{{ annonce.title }}</h1>
+
+        <p class="date">{{ annonce.date |date('d-m-Y') }} </p>
+
+        <textarea spellcheck="false" wrap="soft" class="content">{{ annonce.content }}</textarea>
+
+        {% if annonce.link != null %}
+            <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
+        {% endif %}
+
+    </div>
+
+</div>
+
+
+{% endblock %}

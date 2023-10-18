@@ -1,6 +1,4 @@
-{% extends 'base.html.twig' %}
 
-{% block title %}Annonce{% endblock %}
 
 {% block stylesheets %}  
     <link rel="stylesheet" type="text/css" href="{{ asset('css/annonces.css') }}" /> 
@@ -8,17 +6,20 @@
 
 {% block body %}
 
-<div id="annonce">
+<div class="annonce">
 
-    <h2 id="title">{{ annonce.title }}</h2>
+    <h2 class="title">{{ annonce.title }}</h2>
 
-    <p id="date">{{ annonce.date |date('d-m-Y') }} </p>
+    <p class="date">{{ annonce.date |date('d-m-Y') }} </p>
 
-    <textarea readonly="true" rows="4" id="content">{{ annonce.content[:400] }}</textarea>
+    <textarea spellcheck="false" readonly="true" rows="4" id="content{{annonce.id}}" class="content">{{ annonce.content }}</textarea>
 
     {% if annonce.link != null %}
-    <a id="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a> <br>
+    <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
     {% endif %}
+
+    <a class="voirPlus" href="{{ path('app_timtode_annonce', { id: annonce.id }) }}">voir plus</a>
+
 
 </div>
 
