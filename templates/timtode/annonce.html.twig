@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}ANNONCE{% endblock %}
+{% block title %}{{ annonce.jeu }} - {{ annonce.title }}{% endblock %}
 
 
 
@@ -21,6 +21,13 @@
         {% if annonce.link != null %}
             <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
         {% endif %}
+
+        {% for commentaire in annonce.comments  %}
+            <div class="comment">
+                <p class="author">{{ commentaire.author }}</p>
+                <p class="comment-content">{{ commentaire.content }}</p>
+            </div>
+        {% endfor %}
 
     </div>
 
