@@ -22,6 +22,11 @@
             <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
         {% endif %}
 
+        {{ form_start(form) }}
+            {{ form_row(form.content) }}
+            <button type="submit" class="btn">Register</button>
+        {{ form_end(form) }}
+
         {% for commentaire in annonce.comments  %}
             <div class="comment">
                 <p class="author">{{ commentaire.author }}</p>
