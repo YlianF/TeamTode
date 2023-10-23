@@ -26,7 +26,7 @@ class TimtodeController extends AbstractController
         $annoncesPaginees = $paginator->paginate(
             $annonces, 
             $request->query->getInt('page', 1), 
-            1
+            5
         );
         
         

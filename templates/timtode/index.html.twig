@@ -10,21 +10,23 @@
         <h1 class="title" style="text-align: center;">TIMTODE</h1>
 
         <div class="row" style="text-align: center;">
-            <div class="col-sm-12 col-md-6">
-                <btn id="btnAnnonce" onClick="onClickAnnonce()">Annonces</btn>
-            </div>
-            <div class="col-sm-12 col-md-6">
-                <btn id="btnPatch" onClick="onClickPatch()">Patch</btn>
-            </div>
-        </div>
 
+            <div class="col-sm-12 col-md-6">
+                <button id="btnAnnonce" onClick="onClickAnnonce()">Annonces</button>
+            </div>
+
+            <div class="col-sm-12 col-md-6">
+                <button id="btnDescription" onClick="onClickDescription()">Description</button>
+            </div>
+            
+        </div>
 
         <div id="annonceDiv">
             {% include 'annonces.html.twig' %}
         </div>
 
-        <div id="patchDiv">
-            {% include 'patchs.html.twig' %}
+        <div id="descriptionDiv">
+            {% include 'timtode/description.html.twig' %}
         </div>
 
 
@@ -34,24 +36,25 @@
             var annonce = true;
             annonceDiv.style.display = "block";
 
-            var patchDiv = document.getElementById("patchDiv");
-            var patch = false;
-            patchDiv.style.display = "none";
+            var descriptionDiv = document.getElementById("descriptionDiv");
+            var description = false;
+            descriptionDiv.style.display = "none";
             
             function onClickAnnonce() {
-                if (patch) {
-                    patch = !patch;
+                if (description) {
+                    description = !description;
                     annonce = !annonce;
+
                     annonceDiv.style.display = "block";
-                    patchDiv.style.display = "none";
+                    descriptionDiv.style.display = "none";
                 }
             }
 
-            function onClickPatch() {
+            function onClickDescription() {
                 if (annonce) {
                     annonce = !annonce;
-                    patch = !patch;
-                    patchDiv.style.display = "block";
+                    description = !description;
+                    descriptionDiv.style.display = "block";
                     annonceDiv.style.display = "none";
                 }
             }
