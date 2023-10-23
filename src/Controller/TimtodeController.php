@@ -13,16 +13,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Environment;
+use Knp\Component\Pager\PaginatorInterface;
 
 class TimtodeController extends AbstractController
 {
     public int $ID_JEU = 1;
     #[Route('/timtode', name: 'app_timtode')]
-    public function index(AnnoncesRepository $AnnoncesRepository): Response
+    public function index(Request $request, AnnoncesRepository $AnnoncesRepository, PaginatorInterface $paginator): Response
     {
+        $annonces = $AnnoncesRepository->findBy(['jeu' => $this->ID_JEU], ['date' => 'DESC']);
+
+        $annoncesPaginees = $paginator->paginate(
+            $annonces, 
+            $request->query->getInt('page', 1), 
+            1
+        );
+        
+        
         return $this->render('timtode/index.html.twig', [
             'controller_name' => 'TimtodeController',
-            'annonces' => $AnnoncesRepository->findBy(['jeu' => $this->ID_JEU], ['date' => 'DESC']),
+            'annonces' => $annoncesPaginees,
         ]);
     }
 

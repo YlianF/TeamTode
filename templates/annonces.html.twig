@@ -6,6 +6,7 @@
     {% for annonce in annonces  %}
         {% include 'annonce.html.twig' with [annonce] %}
     {% endfor %}
+    {{ knp_pagination_render(annonces) }}
 
 </div>
 
