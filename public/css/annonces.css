@@ -4,7 +4,7 @@
 }
 
 .date {
-    font: 1em;
+    font-size: 1em;
     font-family: monospace;
     margin-top: 5px;
 }
@@ -15,19 +15,19 @@
     text-decoration: underline;
     cursor: pointer;
     float: right;
-    font: 1em;
+    font-size: 1em;
 }
 
 .link {
     all: unset;
     text-decoration: underline;
     cursor: pointer;
-    font: 1em;
+    font-size: 1em;
     float: left;
 }
 
 .content {
-    font: 1.5em;
+    font-size: 1.5em;
     color: white;
     background-color: rgb(32, 30, 50);
     min-width: 100%;
@@ -36,7 +36,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     overflow:hidden;
-    resize:none
+    resize:none;
 }
 
 .annonce {
@@ -51,4 +51,3 @@
     padding-right: 20px;
     padding-bottom: 40px;
 }
-

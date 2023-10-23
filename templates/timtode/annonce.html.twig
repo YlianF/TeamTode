@@ -1,42 +1,48 @@
 {% extends 'base.html.twig' %}
 
-
 {% block title %}{{ annonce.jeu }} - {{ annonce.title }}{% endblock %}
 
-
-
 {% block body %}
+    <div class="back">
+        <div class="page">
+
+            <h1 class="title">{{ annonce.title }}</h1>
+
+            <p class="date">{{ annonce.date |date('d-m-Y') }} </p>
+
+            <textarea spellcheck="false" wrap="soft" class="content">{{ annonce.content }}</textarea>
+
+            {% if annonce.link != null %}
+                <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
+            {% endif %}
 
 
-<div class="back">
 
-    <div class="page">
+            <div class="commentaires">
 
-        <h1 class="title">{{ annonce.title }}</h1>
+                <p>Commenter</p>
 
-        <p class="date">{{ annonce.date |date('d-m-Y') }} </p>
+                {{ form_start(form) }}
+                    <div class="content-input">
+                        {{ form_row(form.content) }}
+                        <button type="submit" class="btn">publier</button>
+                    </div>
 
-        <textarea spellcheck="false" wrap="soft" class="content">{{ annonce.content }}</textarea>
 
-        {% if annonce.link != null %}
-            <a class="link" target="_blank" href="{{ annonce.link }}">Voir le trailer</a>
-        {% endif %}
+                {{ form_end(form) }}
 
-        {{ form_start(form) }}
-            {{ form_row(form.content) }}
-            <button type="submit" class="btn">Register</button>
-        {{ form_end(form) }}
+                {% for commentaire in annonce.comments  %}
+                    <div class="comment">
+                        <p class="author">{{ commentaire.author }}</p>
+                        <p class="comment-content">{{ commentaire.content }}</p>
+                    </div>
+                {% endfor %}
 
-        {% for commentaire in annonce.comments  %}
-            <div class="comment">
-                <p class="author">{{ commentaire.author }}</p>
-                <p class="comment-content">{{ commentaire.content }}</p>
             </div>
-        {% endfor %}
+
+        </div>
 
     </div>
-
-</div>
 
 
 {% endblock %}
