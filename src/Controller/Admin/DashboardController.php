@@ -6,6 +6,7 @@ use App\Entity\Users;
 use App\Entity\Jeux;
 use App\Entity\Annonces;
 use App\Entity\Comment;
+use App\Entity\Ticket;
 
 use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -48,6 +49,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
         yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-users', Users::class);
+        yield MenuItem::linkToCrud('Tickets', 'fas fa-message', Ticket::class);
         yield MenuItem::linkToCrud('Jeux', 'fas fa-gamepad', Jeux::class);
         yield MenuItem::linkToCrud('Annonces', 'fas fa-message', Annonces::class);
         yield MenuItem::linkToCrud('Commentaires', 'fas fa-message', Comment::class);

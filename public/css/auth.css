@@ -1,0 +1,21 @@
+.login {
+    width: 60%;
+    margin: 1px auto;
+    padding-top: 40px;
+}
+
+.field {
+    margin-top: 10px;
+}
+
+.register {
+    width: 60%;
+    margin: 1px auto;
+}
+
+#registration_form_email,
+#registration_form_name,
+#registration_form_plainPassword_first,
+#registration_form_plainPassword_second {
+    width: 100%;
+}

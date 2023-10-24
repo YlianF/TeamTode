@@ -22,19 +22,21 @@
 
                 <p>Commenter</p>
 
+
+
                 {{ form_start(form) }}
                     <div class="content-input">
                         {{ form_row(form.content) }}
                         <button type="submit" class="btn">publier</button>
                     </div>
-
-
                 {{ form_end(form) }}
+
+
 
                 {% for commentaire in annonce.comments  %}
                     <div class="comment">
                         <p class="author">{{ commentaire.author }}</p>
-                        <p class="comment-content">{{ commentaire.content }}</p>
+                        <textarea spellcheck="false" class="comment-content">{{ commentaire.content }}</textarea>
                     </div>
                 {% endfor %}
 

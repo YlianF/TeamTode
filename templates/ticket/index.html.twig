@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TickerController!{% endblock %}
+
+{% block body %}
+
+
+<div class="back">
+    <div class="view">
+        <h1 class="title">Un bug ? Une suggestion ? Dis nous tout !</h1>
+
+        {{ form_start(form) }}
+            <div class="ticket">
+
+                <div class="ticket-field">
+                    <p>Un résumé de ce que tu veux nous dire ?</p>
+                    {{ form_row(form.title) }}
+                </div>
+
+                <div class="ticket-field">
+                    <p>Détaille nous ça</p>
+                    {{ form_row(form.content) }}
+                </div>
+
+                <button type="submit" class="btn">publier</button>
+
+            </div>
+        {{ form_end(form) }}
+
+    </div>
+</div>
+{% endblock %}
